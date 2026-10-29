@@ -70,7 +70,7 @@ export default async function RootLayout({
     doubanProxy = config.SiteConfig.DoubanProxy;
     disableYellowFilter = config.SiteConfig.DisableYellowFilter;
     customCategories = config.CustomCategories.filter(
-      (category) => !category.disabled
+      (category) => !category.disabled,
     ).map((category) => ({
       name: category.name || '',
       type: category.type,
@@ -101,6 +101,10 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `window.RUNTIME_CONFIG = ${JSON.stringify(runtimeConfig)};`,
           }}
+        />
+        <meta
+          name='google-site-verification'
+          content='ahf3xlDodUGLz75lX54XxIQrkzxnucn5FqiIa0wt08Q'
         />
       </head>
       <body
